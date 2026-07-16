@@ -355,7 +355,7 @@ client.on("messageCreate", async (message) => {
         }
     });
 
-    {
+    
     
     // 1. قائمة التشفير الشاملة بنمط (ـ,ـ) وبدون مسافات
 const replacements = {
@@ -997,7 +997,7 @@ client.on("interactionCreate", async (interaction) => {
         if (interaction.deferred) await interaction.editReply({ content: "❌ حدث خطأ أثناء إنشاء التذكرة." });
     }
 }
-{
+
 // ========== دالة الدفع الموحدة ==========
 async function handleAuctionPayment(interaction, db, config, type) {
     const guildId = interaction.guild.id;
