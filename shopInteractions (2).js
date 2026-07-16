@@ -355,7 +355,7 @@ client.on("messageCreate", async (message) => {
         }
     });
 
-    {
+    
     
     // 1. قائمة التشفير الشاملة بنمط (ـ,ـ) وبدون مسافات
 const replacements = {
