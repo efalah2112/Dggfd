@@ -1,0 +1,27 @@
+{
+  "vip": {
+    "name": "setup-help",
+    "roleId": "1455994923869278361",
+    "price": 1
+  },
+  "special": {
+    "name": "",
+    "roleId": "",
+    "price": ""
+  },
+  "star": {
+    "name": "",
+    "roleId": "",
+    "price": ""
+  },
+  "dragon": {
+    "name": "",
+    "roleId": "",
+    "price": ""
+  },
+  "damon": {
+    "name": "",
+    "roleId": "",
+    "price": ""
+  }
+}

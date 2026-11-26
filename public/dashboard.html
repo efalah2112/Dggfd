@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Discord Bot</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="server-icon" id="serverIcon">B</div>
+                <div class="server-info">
+                    <select id="guildSelect" class="guild-select">
+                        <option value="">اختر السيرفر...</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <a href="#overview" class="sidebar-item active" data-page="overview">
+                    <span class="item-name">نظرة عامة</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">المتاجر</div>
+                <a href="#shop-settings" class="sidebar-item" data-page="shop-settings">
+                    <span class="item-name">إعدادات المتاجر</span>
+                </a>
+                <a href="#shop-types" class="sidebar-item" data-page="shop-types">
+                    <span class="item-name">أنواع المتاجر</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">المزادات</div>
+                <a href="#auction-settings" class="sidebar-item" data-page="auction-settings">
+                    <span class="item-name">إعدادات المزادات</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الطلبات</div>
+                <a href="#order-settings" class="sidebar-item" data-page="order-settings">
+                    <span class="item-name">إعدادات الطلبات</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الدعم</div>
+                <a href="#ticket-settings" class="sidebar-item" data-page="ticket-settings">
+                    <span class="item-name">إعدادات التذاكر</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الأسعار والقوانين</div>
+                <a href="#prices-settings" class="sidebar-item" data-page="prices-settings">
+                    <span class="item-name">الأسعار</span>
+                </a>
+                <a href="#rules-settings" class="sidebar-item" data-page="rules-settings">
+                    <span class="item-name">القوانين</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الرتب</div>
+                <a href="#role-settings" class="sidebar-item" data-page="role-settings">
+                    <span class="item-name">إعدادات الرتب</span>
+                </a>
+                <a href="#custom-roles" class="sidebar-item" data-page="custom-roles">
+                    <span class="item-name">الرتب المخصصة</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الإشراف</div>
+                <a href="#moderation-settings" class="sidebar-item" data-page="moderation-settings">
+                    <span class="item-name">إعدادات الإشراف</span>
+                </a>
+                <a href="#mod-logs" class="sidebar-item" data-page="mod-logs">
+                    <span class="item-name">اللوق</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الإعلانات</div>
+                <a href="#ads-settings" class="sidebar-item" data-page="ads-settings">
+                    <span class="item-name">إعدادات الإعلانات</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">عام</div>
+                <a href="#general-settings" class="sidebar-item" data-page="general-settings">
+                    <span class="item-name">الإعدادات العامة</span>
+                </a>
+                <a href="#banners" class="sidebar-item" data-page="banners">
+                    <span class="item-name">البانرات والصور</span>
+                </a>
+                <a href="#messages" class="sidebar-item" data-page="messages">
+                    <span class="item-name">الرسائل</span>
+                </a>
+                <a href="#embed-settings" class="sidebar-item" data-page="embed-settings">
+                    <span class="item-name">إعدادات الإمبد</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">إدارة المتاجر</div>
+                <a href="#shops-management" class="sidebar-item" data-page="shops-management">
+                    <span class="item-name">قائمة المتاجر</span>
+                </a>
+                <a href="#tax-system" class="sidebar-item" data-page="tax-system">
+                    <span class="item-name">نظام الضرائب</span>
+                </a>
+                <a href="#financial-stats" class="sidebar-item" data-page="financial-stats">
+                    <span class="item-name">الإحصائيات المالية</span>
+                </a>
+                <a href="#tax-calculator" class="sidebar-item" data-page="tax-calculator">
+                    <span class="item-name">حاسبة الضرائب</span>
+                </a>
+                <a href="#mass-message" class="sidebar-item" data-page="mass-message">
+                    <span class="item-name">رسائل المتاجر</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الاقتراحات</div>
+                <a href="#suggestions-settings" class="sidebar-item" data-page="suggestions-settings">
+                    <span class="item-name">إعدادات الاقتراحات</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الإدارة</div>
+                <a href="#rules-settings" class="sidebar-item" data-page="rules-settings">
+                    <span class="item-name">القوانين</span>
+                </a>
+                <a href="#shop-organize" class="sidebar-item" data-page="shop-organize">
+                    <span class="item-name">تنظيم المتاجر</span>
+                </a>
+                <a href="#system-logs" class="sidebar-item" data-page="system-logs">
+                    <span class="item-name">السجلات</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الأتمتة</div>
+                <a href="#embed-messages" class="sidebar-item" data-page="embed-messages">
+                    <span class="item-name">💬 رسائل الإيمبد</span>
+                </a>
+                <a href="#auto-reply" class="sidebar-item" data-page="auto-reply">
+                    <span class="item-name">✉️ الرد التلقائي</span>
+                </a>
+                <a href="#auto-line" class="sidebar-item" data-page="auto-line">
+                    <span class="item-name">📏 الخط التلقائي</span>
+                </a>
+                <a href="#tax-room" class="sidebar-item" data-page="tax-room">
+                    <span class="item-name">روم الضرائب</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">الدعم</div>
+                <a href="#website-tickets" class="sidebar-item" data-page="website-tickets">
+                    <span class="item-name">تذاكر الموقع</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section" id="premium-section" style="display: none;">
+                <div class="section-title">⭐ البريميوم</div>
+                <a href="#premium-dashboard" class="sidebar-item" data-page="premium-dashboard">
+                    <span class="item-name">لوحة التحكم</span>
+                </a>
+                <a href="#premium-bots" class="sidebar-item" data-page="premium-bots">
+                    <span class="item-name">البوتات البريميوم</span>
+                </a>
+                <a href="#premium-blacklist" class="sidebar-item" data-page="premium-blacklist">
+                    <span class="item-name">قائمة الحظر</span>
+                </a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-buttons">
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=1299341012430991495&permissions=8&scope=bot%20applications.commands" target="_blank" class="header-btn invite-btn">
+                        <span>🤖</span> إضافة البوت
+                    </a>
+                    <a href="https://discord.gg/4czEpHmrh" target="_blank" class="header-btn support-btn">
+                        <span>💬</span> سيرفر الدعم
+                    </a>
+                </div>
+                <div class="user-profile">
+                    <img src="" alt="Avatar" class="user-avatar" id="userAvatar">
+                    <span class="user-name" id="userDisplayName">المستخدم</span>
+                </div>
+                <a href="/auth/logout" class="logout-btn">تسجيل الخروج</a>
+            </div>
+            
+            <div id="no-guild-message" class="no-guild-box">
+                <h2>اختر سيرفر من القائمة</h2>
+                <p>يجب اختيار سيرفر لعرض وتعديل إعداداته</p>
+            </div>
+            
+            <div id="page-content" style="display: none;">
+                <!-- Overview Page -->
+                <div id="overview-page" class="page-section active">
+                    <h1 class="page-title">نظرة عامة</h1>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">🏪</div>
+                            <div class="stat-info">
+                                <h3 id="shopsCount">0</h3>
+                                <p>المتاجر النشطة</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green">📦</div>
+                            <div class="stat-info">
+                                <h3 id="shopTypesCount">0</h3>
+                                <p>أنواع المتاجر</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon purple">👑</div>
+                            <div class="stat-info">
+                                <h3 id="rolesCount">0</h3>
+                                <p>الرتب المخصصة</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orange">👥</div>
+                            <div class="stat-info">
+                                <h3 id="membersCount">0</h3>
+                                <p>الأعضاء</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Settings Page -->
+                <div id="shop-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات المتاجر</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري المتاجر</label>
+                            <select id="mtagrcat" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة أدمن المتاجر</label>
+                            <select id="admins" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم لوقات المتاجر</label>
+                            <select id="logs" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم لوقات الشراء</label>
+                            <select id="logsbuy" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة صاحب المتجر</label>
+                            <select id="shoprole" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>بنك التحويل (آيدي)</label>
+                            <input type="text" id="transferBank" class="form-input" placeholder="آيدي البنك">
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('shop')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Shop Types Page -->
+                <div id="shop-types-page" class="page-section">
+                    <h1 class="page-title">أنواع المتاجر</h1>
+                    <section class="content-section">
+                        <div id="shopTypesList" class="shop-types-list">
+                            <div class="loading">جاري التحميل...</div>
+                        </div>
+                        <button class="add-btn" onclick="openAddShopTypeModal()">+ إضافة نوع جديد</button>
+                    </section>
+                </div>
+                
+                <!-- Auction Settings Page -->
+                <div id="auction-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات المزادات</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري المزادات</label>
+                            <select id="Auctioncat" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة أدمن المزادات</label>
+                            <select id="Actionadmins" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم المزادات 1</label>
+                            <select id="auctionroom1" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم المزادات 2</label>
+                            <select id="auctionroom2" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة المزاد</label>
+                            <select id="mzad_auction" class="form-select role-select"></select>
+                        </div>
+                        <h3>الأسعار</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر everyone (بدون ضريبة)</label>
+                                <input type="number" id="no_tax_everyone_auction" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر everyone (مع ضريبة)</label>
+                                <input type="number" id="tax_everyone_auction" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر here (بدون ضريبة)</label>
+                                <input type="number" id="no_tax_here_auction" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر here (مع ضريبة)</label>
+                                <input type="number" id="tax_here_auction" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر رتبة المزاد (بدون ضريبة)</label>
+                                <input type="number" id="no_tax_mzad_auction" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر رتبة المزاد (مع ضريبة)</label>
+                                <input type="number" id="tax_mzad_auction" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>قوانين المزادات</label>
+                            <textarea id="auctionRules" class="form-textarea" rows="4"></textarea>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('auction')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Order Settings Page -->
+                <div id="order-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الطلبات</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري الطلبات</label>
+                            <select id="ordercat" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة أدمن الطلبات</label>
+                            <select id="Ourderadmins" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم الطلبات</label>
+                            <select id="orderroom" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة النومن</label>
+                            <select id="role_nomen" class="form-select role-select"></select>
+                        </div>
+                        <h3>الأسعار</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر everyone (بدون ضريبة)</label>
+                                <input type="number" id="no_tax_everyone_price" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر everyone (مع ضريبة)</label>
+                                <input type="number" id="tax_everyone_price" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر here (بدون ضريبة)</label>
+                                <input type="number" id="no_tax_here_price" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر here (مع ضريبة)</label>
+                                <input type="number" id="tax_here_price" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>سعر رتبة النومن (بدون ضريبة)</label>
+                                <input type="number" id="no_tax_nomen_price" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر رتبة النومن (مع ضريبة)</label>
+                                <input type="number" id="tax_nomen_price" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>قوانين الطلبات</label>
+                            <textarea id="orderRules" class="form-textarea" rows="4"></textarea>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('order')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Ticket Settings Page -->
+                <div id="ticket-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات التذاكر</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري التذاكر</label>
+                            <select id="Supportcat" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة أدمن الدعم</label>
+                            <select id="Spportadmins" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم التذاكر</label>
+                            <select id="ticketsChannel" class="form-select channel-select"></select>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('ticket')">حفظ الإعدادات</button>
+                    </section>
+
+                    <h2 class="section-subtitle">تخصيص إيمبدات التكتات</h2>
+                    <div class="ticket-embeds-tabs">
+                        <button class="ticket-tab-btn active" onclick="showTicketEmbedTab('buy')">تكت الشراء</button>
+                        <button class="ticket-tab-btn" onclick="showTicketEmbedTab('auction')">تكت المزاد</button>
+                        <button class="ticket-tab-btn" onclick="showTicketEmbedTab('order')">تكت الطلبات</button>
+                        <button class="ticket-tab-btn" onclick="showTicketEmbedTab('support')">تكت الدعم</button>
+                        <button class="ticket-tab-btn" onclick="showTicketEmbedTab('role')">تكت الرتب</button>
+                    </div>
+
+                    <section class="content-section ticket-embed-config" id="ticketEmbedConfig">
+                        <input type="hidden" id="currentTicketType" value="buy">
+                        
+                        <h3>إعدادات الإيمبد الرئيسي (زر فتح التكت)</h3>
+                        <div class="form-group">
+                            <label>عنوان الإيمبد</label>
+                            <input type="text" id="ticketEmbedTitle" class="form-input" placeholder="مثال: تكت الشراء">
+                        </div>
+                        <div class="form-group">
+                            <label>وصف الإيمبد</label>
+                            <textarea id="ticketEmbedDescription" class="form-textarea" rows="4" placeholder="مثال: اضغط على الزر بالأسفل لفتح تكت"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>لون الإيمبد</label>
+                            <div class="color-picker-row">
+                                <span class="color-dot" style="background: #5865F2;" onclick="document.getElementById('ticketEmbedColor').value='#5865F2'"></span>
+                                <span class="color-dot" style="background: #3498db;" onclick="document.getElementById('ticketEmbedColor').value='#3498db'"></span>
+                                <span class="color-dot" style="background: #2ecc71;" onclick="document.getElementById('ticketEmbedColor').value='#2ecc71'"></span>
+                                <span class="color-dot" style="background: #f1c40f;" onclick="document.getElementById('ticketEmbedColor').value='#f1c40f'"></span>
+                                <span class="color-dot" style="background: #e74c3c;" onclick="document.getElementById('ticketEmbedColor').value='#e74c3c'"></span>
+                                <input type="color" id="ticketEmbedColor" value="#5865F2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>صورة الإيمبد (رابط)</label>
+                            <input type="text" id="ticketEmbedImage" class="form-input" placeholder="رابط الصورة">
+                        </div>
+                        <div class="form-group">
+                            <label>الصورة المصغرة (رابط)</label>
+                            <input type="text" id="ticketEmbedThumbnail" class="form-input" placeholder="رابط الصورة المصغرة">
+                        </div>
+                        <div class="form-group">
+                            <label>نص الزر</label>
+                            <input type="text" id="ticketButtonText" class="form-input" placeholder="فتح تكت">
+                        </div>
+                        <div class="form-group">
+                            <label>إيموجي الزر</label>
+                            <input type="text" id="ticketButtonEmoji" class="form-input" placeholder="🎫">
+                        </div>
+
+                        <h3 style="margin-top: 30px;">رسالة الترحيب داخل التكت</h3>
+                        <div class="form-group">
+                            <label>عنوان رسالة الترحيب</label>
+                            <input type="text" id="ticketWelcomeTitle" class="form-input" placeholder="مرحباً بك!">
+                        </div>
+                        <div class="form-group">
+                            <label>وصف رسالة الترحيب</label>
+                            <textarea id="ticketWelcomeDesc" class="form-textarea" rows="6" placeholder="يمكنك استخدام المتغيرات:&#10;{user} - منشن العضو&#10;{username} - اسم العضو&#10;{server} - اسم السيرفر"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>صورة رسالة الترحيب</label>
+                            <input type="text" id="ticketWelcomeImage" class="form-input" placeholder="رابط الصورة">
+                        </div>
+
+                        <h3 style="margin-top: 30px;">القوانين والأسعار</h3>
+                        <div class="form-group">
+                            <label>نص القوانين</label>
+                            <textarea id="ticketRulesText" class="form-textarea" rows="6" placeholder="اكتب قوانين هذا القسم هنا..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>نص الأسعار</label>
+                            <textarea id="ticketPricesText" class="form-textarea" rows="4" placeholder="اكتب الأسعار هنا..."></textarea>
+                        </div>
+
+                        <div class="button-row" style="margin-top: 20px;">
+                            <button class="save-btn" onclick="saveTicketEmbed()">💾 حفظ إعدادات الإيمبد</button>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Prices Settings Page -->
+                <div id="prices-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الأسعار</h1>
+                    <p class="page-desc">قم بتخصيص أسعار كل قسم بشكل منفصل</p>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">🏪 أسعار المتاجر</h2>
+                        <div class="prices-grid">
+                            <div class="form-group">
+                                <label>سعر المتجر الأساسي</label>
+                                <input type="number" id="priceShopBasic" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر المتجر المميز</label>
+                                <input type="number" id="priceShopPremium" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر المتجر VIP</label>
+                                <input type="number" id="priceShopVip" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر الإضافة</label>
+                                <input type="number" id="priceAddition" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر منشن فيري</label>
+                                <input type="number" id="priceMentionEvery" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر منشن هير</label>
+                                <input type="number" id="priceMentionHere" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر تغيير اسم المتجر</label>
+                                <input type="number" id="priceChangeName" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر تفعيل المتجر</label>
+                                <input type="number" id="priceActivateShop" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر تعطيل المتجر</label>
+                                <input type="number" id="priceDisableShop" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر تغيير نوع المتجر</label>
+                                <input type="number" id="priceChangeType" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر تغيير يوميات المتجر</label>
+                                <input type="number" id="priceChangeDaily" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر إزالة التحذير من المتجر</label>
+                                <input type="number" id="priceRemoveWarning" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر الخصم التلقائي</label>
+                                <input type="number" id="priceAutoDiscount" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر رسائل التلقائي للمطلوب</label>
+                                <input type="number" id="priceAutoMessage" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>سعر منشن يومي مره</label>
+                                <input type="number" id="priceDailyMention" class="form-input" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label>تغيير منشن هير مره</label>
+                                <input type="number" id="priceHereMention" class="form-input" placeholder="0">
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">🔨 أسعار المزادات</h2>
+                        <div class="form-group">
+                            <label>رسوم المزاد</label>
+                            <input type="number" id="priceAuctionFee" class="form-input" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label>الحد الأدنى للمزايدة</label>
+                            <input type="number" id="priceAuctionMinBid" class="form-input" placeholder="0">
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">أسعار الطلبات</h2>
+                        <div class="form-group">
+                            <label>سعر الطلب الأساسي</label>
+                            <input type="number" id="priceOrderBasic" class="form-input" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label>سعر الطلب السريع</label>
+                            <input type="number" id="priceOrderExpress" class="form-input" placeholder="0">
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">👥 أسعار الرتب</h2>
+                        <div class="form-group">
+                            <label>سعر المنشن</label>
+                            <input type="number" id="priceRoleMention" class="form-input" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label>سعر الرتبة المخصصة</label>
+                            <input type="number" id="priceRoleCustom" class="form-input" placeholder="0">
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">أسعار التذاكر</h2>
+                        <div class="form-group">
+                            <label>سعر تذكرة الدعم</label>
+                            <input type="number" id="priceTicketSupport" class="form-input" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label>سعر التذكرة المميزة</label>
+                            <input type="number" id="priceTicketPriority" class="form-input" placeholder="0">
+                        </div>
+                    </section>
+                    
+                    <button class="save-btn" onclick="savePrices()">💾 حفظ جميع الأسعار</button>
+                </div>
+                
+                <!-- Rules Settings Page -->
+                <div id="rules-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات القوانين</h1>
+                    <p class="page-desc">قم بتخصيص قوانين كل قسم بشكل منفصل</p>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">القوانين العامة</h2>
+                        <div class="form-group">
+                            <label>القوانين العامة للسيرفر</label>
+                            <textarea id="rulesGeneral" class="form-textarea" rows="6" placeholder="اكتب القوانين العامة هنا..."></textarea>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">🏪 قوانين المتاجر</h2>
+                        <div class="form-group">
+                            <label>قوانين المتاجر</label>
+                            <textarea id="rulesShops" class="form-textarea" rows="6" placeholder="اكتب قوانين المتاجر هنا..."></textarea>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">🔨 قوانين المزادات</h2>
+                        <div class="form-group">
+                            <label>قوانين المزادات</label>
+                            <textarea id="rulesAuctions" class="form-textarea" rows="6" placeholder="اكتب قوانين المزادات هنا..."></textarea>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">قوانين الطلبات</h2>
+                        <div class="form-group">
+                            <label>قوانين الطلبات</label>
+                            <textarea id="rulesOrders" class="form-textarea" rows="6" placeholder="اكتب قوانين الطلبات هنا..."></textarea>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">👥 قوانين الرتب</h2>
+                        <div class="form-group">
+                            <label>قوانين الرتب</label>
+                            <textarea id="rulesRoles" class="form-textarea" rows="6" placeholder="اكتب قوانين الرتب هنا..."></textarea>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2 class="section-subtitle">قوانين التذاكر</h2>
+                        <div class="form-group">
+                            <label>قوانين التذاكر</label>
+                            <textarea id="rulesTickets" class="form-textarea" rows="6" placeholder="اكتب قوانين التذاكر هنا..."></textarea>
+                        </div>
+                    </section>
+                    
+                    <button class="save-btn" onclick="saveRules()">💾 حفظ جميع القوانين</button>
+                </div>
+                
+                <!-- Role Settings Page -->
+                <div id="role-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الرتب</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري الرتب</label>
+                            <select id="role_ticket_category" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة المساعدة</label>
+                            <select id="help" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتب الأدمن (يمكن اختيار أكثر من رتبة)</label>
+                            <select id="adminRoles" class="form-select role-select"></select>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('role')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Custom Roles Page -->
+                <div id="custom-roles-page" class="page-section">
+                    <h1 class="page-title">الرتب المخصصة</h1>
+                    <section class="content-section">
+                        <div id="customRolesList" class="roles-list">
+                            <div class="loading">جاري التحميل...</div>
+                        </div>
+                        <button class="add-btn" onclick="openAddRoleModal()">+ إضافة رتبة جديدة</button>
+                    </section>
+                </div>
+                
+                <!-- Moderation Settings Page -->
+                <div id="moderation-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الإشراف</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري التشهير</label>
+                            <select id="scamcat" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة أدمن التشهير</label>
+                            <select id="scamadmins" class="form-select role-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم السجلات</label>
+                            <select id="logChannel" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم الكونسول</label>
+                            <select id="consoleRoom" class="form-select channel-select"></select>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('moderation')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Mod Logs Page -->
+                <div id="mod-logs-page" class="page-section">
+                    <h1 class="page-title">اللوق</h1>
+                    <section class="content-section">
+                        <div class="log-settings-grid">
+                            <div class="log-card">
+                                <div class="log-card-header">
+                                    <span class="log-title">إضافة باند</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="logBanEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <select id="logBanChannel" class="form-select channel-select"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>لون</label>
+                                    <input type="color" id="logBanColor" class="form-color" value="#DC2626">
+                                </div>
+                            </div>
+                            
+                            <div class="log-card">
+                                <div class="log-card-header">
+                                    <span class="log-title">التايم اوت (اعطاء / ازاله)</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="logTimeoutEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <select id="logTimeoutChannel" class="form-select channel-select"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>لون</label>
+                                    <input type="color" id="logTimeoutColor" class="form-color" value="#F59E0B">
+                                </div>
+                            </div>
+                            
+                            <div class="log-card">
+                                <div class="log-card-header">
+                                    <span class="log-title">إنشاء روم جديد</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="logChannelCreateEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <select id="logChannelCreateChannel" class="form-select channel-select"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>لون</label>
+                                    <input type="color" id="logChannelCreateColor" class="form-color" value="#22C55E">
+                                </div>
+                            </div>
+                            
+                            <div class="log-card">
+                                <div class="log-card-header">
+                                    <span class="log-title">تم إنشاء ثريد</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="logThreadCreateEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <select id="logThreadCreateChannel" class="form-select channel-select"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>لون</label>
+                                    <input type="color" id="logThreadCreateColor" class="form-color" value="#5865F2">
+                                </div>
+                            </div>
+                            
+                            <div class="log-card">
+                                <div class="log-card-header">
+                                    <span class="log-title">حذف رسالة</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="logMessageDeleteEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <select id="logMessageDeleteChannel" class="form-select channel-select"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>لون</label>
+                                    <input type="color" id="logMessageDeleteColor" class="form-color" value="#EF4444">
+                                </div>
+                            </div>
+                            
+                            <div class="log-card">
+                                <div class="log-card-header">
+                                    <span class="log-title">تعديل رسالة</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="logMessageEditEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <select id="logMessageEditChannel" class="form-select channel-select"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>لون</label>
+                                    <input type="color" id="logMessageEditColor" class="form-color" value="#8B5CF6">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('modLogs')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Ads Settings Page -->
+                <div id="ads-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الإعلانات</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري الإعلانات</label>
+                            <select id="Adscat" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>رتبة أدمن الإعلانات</label>
+                            <select id="Adsadmins" class="form-select role-select"></select>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('ads')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- General Settings Page -->
+                <div id="general-settings-page" class="page-section">
+                    <h1 class="page-title">الإعدادات العامة</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>لون الإيمبد (Hex)</label>
+                            <input type="text" id="color" class="form-input" placeholder="#5865F2">
+                        </div>
+                        <div class="form-group">
+                            <label>الخط الفاصل</label>
+                            <input type="text" id="Line" class="form-input" placeholder="ـــــــــــــــــــ">
+                        </div>
+                        <div class="form-group">
+                            <label>الخط 2</label>
+                            <input type="text" id="line" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>الخط 3</label>
+                            <input type="text" id="line3" class="form-input">
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('general')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Banners Page -->
+                <div id="banners-page" class="page-section">
+                    <h1 class="page-title">البانرات والصور</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>البانر الرئيسي</label>
+                            <input type="url" id="bunner" class="form-input" placeholder="رابط الصورة">
+                            <img id="bunner_preview" class="img-preview" src="" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>صورة الدعم</label>
+                            <input type="url" id="Supportimage" class="form-input" placeholder="رابط الصورة">
+                            <img id="Supportimage_preview" class="img-preview" src="" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>صورة المزادات</label>
+                            <input type="url" id="Auctionimage" class="form-input" placeholder="رابط الصورة">
+                            <img id="Auctionimage_preview" class="img-preview" src="" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>صورة الطلبات</label>
+                            <input type="url" id="orderimage" class="form-input" placeholder="رابط الصورة">
+                            <img id="orderimage_preview" class="img-preview" src="" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>صورة التشهير</label>
+                            <input type="url" id="scamimage" class="form-input" placeholder="رابط الصورة">
+                            <img id="scamimage_preview" class="img-preview" src="" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>صورة الإعلانات</label>
+                            <input type="url" id="Adsimage" class="form-input" placeholder="رابط الصورة">
+                            <img id="Adsimage_preview" class="img-preview" src="" style="display:none">
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('banners')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Messages Page -->
+                <div id="messages-page" class="page-section">
+                    <h1 class="page-title">الرسائل</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>رسالة الأسعار</label>
+                            <textarea id="pricesDescription" class="form-textarea" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>رسالة ترحيب الأسعار</label>
+                            <textarea id="pricesWelcomeMessage" class="form-textarea" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>وصف القوانين</label>
+                            <textarea id="rulesDescription" class="form-textarea" rows="4"></textarea>
+                        </div>
+                        <button class="save-btn" onclick="saveSettings('messages')">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                
+                <!-- Embed Settings Page -->
+                <div id="embed-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الإمبد</h1>
+                    
+                    <!-- Tabs Navigation -->
+                    <div class="embed-tabs">
+                        <button class="embed-tab-btn active" onclick="showEmbedTab('embed')">📝 الإمبد</button>
+                        <button class="embed-tab-btn" onclick="showEmbedTab('prices')">الأسعار</button>
+                        <button class="embed-tab-btn" onclick="showEmbedTab('buttons')">🔘 الأزرار</button>
+                    </div>
+                    
+                    <!-- Embed Tab Content -->
+                    <div id="embed-tab-embed" class="embed-tab-content active">
+                        <section class="content-section embed-form-section">
+                            <h2>📝 إعدادات الإمبد</h2>
+                            <div class="form-group">
+                                <label>عنوان الإمبد</label>
+                                <input type="text" id="embedTitle" class="form-input dark-input" placeholder="تنظيم متاجر">
+                            </div>
+                            <div class="form-group">
+                                <label>وصف الإمبد</label>
+                                <textarea id="embedDescription" class="form-textarea dark-input" rows="4" placeholder="الرجاء اختيار الخدمه التي تريدها بالاسفل"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>رابط صورة الإمبد</label>
+                                <input type="url" id="embedImage" class="form-input dark-input" placeholder="https://...">
+                            </div>
+                            <div class="form-group">
+                                <label>فوتر الإمبد</label>
+                                <input type="text" id="embedFooter" class="form-input dark-input" placeholder="تجارب الشوب">
+                            </div>
+                            <div class="form-group">
+                                <label>لون الإمبد</label>
+                                <input type="color" id="embedColor" class="form-input color-picker" value="#5865F2">
+                            </div>
+                        </section>
+                        
+                        <!-- Preview Section -->
+                        <section class="content-section preview-section">
+                            <h2>👁️ معاينة</h2>
+                            <div class="embed-preview-box">
+                                <div class="embed-preview" id="embedPreview">
+                                    <div class="embed-color-bar" id="embedColorBar"></div>
+                                    <div class="embed-content">
+                                        <div class="embed-title" id="embedTitlePreview">تنظيم متاجر</div>
+                                        <div class="embed-description" id="embedDescPreview">الرجاء اختيار الخدمه التي تريدها بالاسفل</div>
+                                        <div class="embed-image" id="embedImagePreview"></div>
+                                        <div class="embed-footer" id="embedFooterPreview">dev by : bh.x7 & _wx10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <div class="button-row">
+                            <button class="save-btn" onclick="saveEmbedSettings()">💾 حفظ الإعدادات</button>
+                            <button class="secondary-btn" onclick="updateEmbedPreview()">🔄 تحديث المعاينة</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Prices Tab Content -->
+                    <div id="embed-tab-prices" class="embed-tab-content">
+                        <section class="content-section">
+                            <h2>إعدادات الأسعار</h2>
+                            <div class="form-group">
+                                <label>رسالة الأسعار</label>
+                                <textarea id="pricesMessage" class="form-textarea dark-input" rows="6" placeholder="أدخل رسالة الأسعار..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>عنوان قائمة الأسعار</label>
+                                <input type="text" id="pricesTitle" class="form-input dark-input" placeholder="الأسعار">
+                            </div>
+                            <div class="button-row">
+                                <button class="save-btn" onclick="savePricesSettings()">💾 حفظ الأسعار</button>
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <!-- Buttons Tab Content -->
+                    <div id="embed-tab-buttons" class="embed-tab-content">
+                        <section class="content-section">
+                            <h2>🔘 إعدادات الأزرار</h2>
+                            <div class="buttons-list" id="embedButtonsList">
+                                <div class="button-item">
+                                    <input type="text" class="form-input dark-input" placeholder="نص الزر" id="button1Text">
+                                    <select class="form-select dark-input" id="button1Style">
+                                        <option value="primary">أزرق</option>
+                                        <option value="secondary">رمادي</option>
+                                        <option value="success">أخضر</option>
+                                        <option value="danger">أحمر</option>
+                                    </select>
+                                    <input type="text" class="form-input dark-input" placeholder="الإيموجي" id="button1Emoji">
+                                </div>
+                            </div>
+                            <button class="secondary-btn" onclick="addEmbedButton()">➕ إضافة زر</button>
+                            <div class="button-row" style="margin-top: 20px;">
+                                <button class="save-btn" onclick="saveButtonsSettings()">💾 حفظ الأزرار</button>
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <!-- Saved Embeds -->
+                    <section class="content-section">
+                        <h2>📂 الإمبدات المحفوظة</h2>
+                        <div id="savedEmbedsList" class="items-list">
+                            <p class="no-items">لا توجد إمبدات محفوظة</p>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Shops Management Page -->
+                <div id="shops-management-page" class="page-section">
+                    <h1 class="page-title">إدارة المتاجر</h1>
+                    <section class="content-section">
+                        <div class="filter-row">
+                            <select id="shopTypeFilter" class="form-select">
+                                <option value="">كل الأنواع</option>
+                            </select>
+                            <input type="text" id="shopSearchInput" class="form-input" placeholder="بحث عن متجر...">
+                        </div>
+                        <table class="data-table" id="shopsTable">
+                            <thead>
+                                <tr>
+                                    <th>المتجر</th>
+                                    <th>النوع</th>
+                                    <th>المالك</th>
+                                    <th>المساعدين</th>
+                                    <th>الضريبة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shopsList"></tbody>
+                        </table>
+                    </section>
+                </div>
+                
+                <!-- Tax System Page -->
+                <div id="tax-system-page" class="page-section">
+                    <h1 class="page-title">نظام الضرائب</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>كاتيجوري المتاجر للضرائب</label>
+                            <select id="taxCategory" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم نشر الضرائب</label>
+                            <select id="taxNotifyChannel" class="form-select channel-select"></select>
+                        </div>
+                        <h3>أسعار الضرائب حسب النوع</h3>
+                        <div id="taxPricesList" class="tax-prices-list"></div>
+                        <div class="button-row">
+                            <button class="save-btn" onclick="saveTaxSettings()">💾 حفظ الإعدادات</button>
+                            <button class="accent-btn" onclick="publishTaxes()">نشر الضرائب</button>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Financial Stats Page -->
+                <div id="financial-stats-page" class="page-section">
+                    <h1 class="page-title">الإحصائيات المالية</h1>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon green">💰</div>
+                            <div class="stat-info">
+                                <h3 id="paidShopsCount">0</h3>
+                                <p>الدافعين</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon red">⚠️</div>
+                            <div class="stat-info">
+                                <h3 id="unpaidShopsCount">0</h3>
+                                <p>غير الدافعين</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue">📊</div>
+                            <div class="stat-info">
+                                <h3 id="totalTaxRevenue">0</h3>
+                                <p>إجمالي الضرائب</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="content-section">
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="showFinancialTab('paid')">✅ الدافعين</button>
+                            <button class="tab-btn" onclick="showFinancialTab('unpaid')">❌ غير الدافعين</button>
+                        </div>
+                        <table class="data-table" id="financialTable">
+                            <thead>
+                                <tr>
+                                    <th>المتجر</th>
+                                    <th>المالك</th>
+                                    <th>المبلغ</th>
+                                    <th>التاريخ</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="financialList"></tbody>
+                        </table>
+                    </section>
+                </div>
+                
+                
+                <!-- Tax Calculator Page -->
+                <div id="tax-calculator-page" class="page-section">
+                    <h1 class="page-title">حاسبة الضرائب</h1>
+                    
+                    <!-- Calculator Tabs -->
+                    <div class="calc-tabs">
+                        <button class="calc-tab-btn active" onclick="showCalcTab('normal')">💵 الضريبة العادية</button>
+                        <button class="calc-tab-btn" onclick="showCalcTab('roblox')">🎮 ضريبة الروبوكس</button>
+                        <button class="calc-tab-btn" onclick="showCalcTab('all')">جميع الضرائب</button>
+                    </div>
+                    
+                    <!-- Normal Tax Calculator -->
+                    <div id="calc-tab-normal" class="calc-tab-content active">
+                        <section class="content-section">
+                            <h2>💵 حاسبة الضريبة العادية</h2>
+                            <div class="form-group">
+                                <label>المبلغ</label>
+                                <input type="number" id="normalTaxAmount" class="form-input dark-input" placeholder="أدخل المبلغ...">
+                            </div>
+                            <button class="save-btn" onclick="calculateNormalTax()">🧮 احسب</button>
+                            <div class="calc-result" id="normalTaxResult"></div>
+                        </section>
+                    </div>
+                    
+                    <!-- Roblox Tax Calculator -->
+                    <div id="calc-tab-roblox" class="calc-tab-content">
+                        <section class="content-section">
+                            <h2>🎮 حاسبة ضريبة الروبوكس (30%)</h2>
+                            <div class="form-group">
+                                <label>المبلغ بالروبوكس</label>
+                                <input type="number" id="robloxTaxAmount" class="form-input dark-input" placeholder="أدخل المبلغ R$...">
+                            </div>
+                            <button class="save-btn" onclick="calculateRobloxTax()">🧮 احسب</button>
+                            <div class="calc-result" id="robloxTaxResult"></div>
+                        </section>
+                    </div>
+                    
+                    <!-- All Taxes Calculator -->
+                    <div id="calc-tab-all" class="calc-tab-content">
+                        <section class="content-section">
+                            <h2>جميع الضرائب</h2>
+                            <div class="form-group">
+                                <label>المبلغ</label>
+                                <input type="number" id="allTaxAmount" class="form-input dark-input" placeholder="أدخل المبلغ...">
+                            </div>
+                            <button class="save-btn" onclick="calculateAllTaxes()">🧮 احسب الكل</button>
+                            <div class="calc-results-grid" id="allTaxResults"></div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Mass Message Page -->
+                <div id="mass-message-page" class="page-section">
+                    <h1 class="page-title">رسائل المتاجر</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>اختر الكاتيجوري</label>
+                            <select id="massMessageCategory" class="form-select category-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>اختر أنواع المتاجر</label>
+                            <div id="massMessageTypes" class="checkbox-group"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>عنوان الرسالة</label>
+                            <input type="text" id="massMessageTitle" class="form-input" placeholder="عنوان الإمبد">
+                        </div>
+                        <div class="form-group">
+                            <label>محتوى الرسالة</label>
+                            <textarea id="massMessageContent" class="form-textarea" rows="6" placeholder="محتوى الرسالة..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>لون الإمبد</label>
+                            <input type="color" id="massMessageColor" class="form-input color-picker" value="#5865F2">
+                        </div>
+                        <button class="accent-btn" onclick="sendMassMessage()">📤 إرسال للمتاجر المحددة</button>
+                    </section>
+                </div>
+                
+                <!-- Suggestions Settings Page -->
+                <div id="suggestions-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات الاقتراحات</h1>
+                    <section class="content-section">
+                        <div class="form-group">
+                            <label>روم الاقتراحات</label>
+                            <select id="suggestionsChannel" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم الاقتراحات المقبولة</label>
+                            <select id="acceptedSuggestionsChannel" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>روم الاقتراحات المرفوضة</label>
+                            <select id="rejectedSuggestionsChannel" class="form-select channel-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>لون إمبد الاقتراح</label>
+                            <input type="color" id="suggestionEmbedColor" class="form-input color-picker" value="#5865F2">
+                        </div>
+                        <div class="form-group">
+                            <label>رد القبول التلقائي</label>
+                            <input type="text" id="suggestionAcceptMessage" class="form-input" placeholder="تم قبول اقتراحك!">
+                        </div>
+                        <div class="form-group">
+                            <label>رد الرفض التلقائي</label>
+                            <input type="text" id="suggestionRejectMessage" class="form-input" placeholder="تم رفض اقتراحك.">
+                        </div>
+                        <button class="save-btn" onclick="saveSuggestionSettings()">حفظ الإعدادات</button>
+                    </section>
+                </div>
+                
+                <!-- Website Tickets Page -->
+                
+                <!-- Rules Settings Page -->
+                <div id="rules-settings-page" class="page-section">
+                    <h1 class="page-title">إعدادات القوانين</h1>
+                    
+                    <div class="rules-grid">
+                        <!-- Shop Rules Embed -->
+                        <section class="content-section rule-card">
+                            <h2>إمبد قوانين المتاجر</h2>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="shopRulesTitle" class="form-input dark-input" placeholder="قوانين المتاجر">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف (قبل القوانين)</label>
+                                <textarea id="shopRulesDesc" class="form-textarea dark-input" rows="3" placeholder="الوصف يظهر قبل القوانين..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>الفوتر</label>
+                                <input type="text" id="shopRulesFooter" class="form-input dark-input" placeholder="Bot Shop">
+                            </div>
+                            <div class="form-group">
+                                <label>صورة (رابط)</label>
+                                <input type="url" id="shopRulesImage" class="form-input dark-input" placeholder="https://...">
+                            </div>
+                        </section>
+                        
+                        <!-- Post Rules Embed -->
+                        <section class="content-section rule-card">
+                            <h2>📰 إمبد قوانين المنشورات</h2>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="postRulesTitle" class="form-input dark-input" placeholder="قوانين المنشورات">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف (قبل القوانين)</label>
+                                <textarea id="postRulesDesc" class="form-textarea dark-input" rows="3" placeholder="الوصف يظهر قبل القوانين..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>الفوتر</label>
+                                <input type="text" id="postRulesFooter" class="form-input dark-input" placeholder="Bot Shop">
+                            </div>
+                            <div class="form-group">
+                                <label>صورة (رابط)</label>
+                                <input type="url" id="postRulesImage" class="form-input dark-input" placeholder="https://...">
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <div class="button-row">
+                        <button class="save-btn" onclick="saveRulesSettings()">💾 حفظ القوانين</button>
+                    </div>
+                </div>
+                
+                <!-- Shop Organize Page -->
+                <div id="shop-organize-page" class="page-section">
+                    <h1 class="page-title">تنظيم المتاجر</h1>
+                    
+                    <!-- Tickets Section -->
+                    <section class="content-section">
+                        <h2>إعدادات التكتات</h2>
+                        
+                        <div class="ticket-section">
+                            <h3>تكت البيع والشراء</h3>
+                            <div class="form-row">
+                                <div class="form-group flex-grow">
+                                    <label>آيدي الروم</label>
+                                    <input type="text" id="buyTicketRoom" class="form-input dark-input" placeholder="آيدي الروم">
+                                </div>
+                                <button class="gradient-btn" onclick="sendBuyTicketEmbed()">📤 إرسال</button>
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-section">
+                            <h3>🔨 تكت المزاد</h3>
+                            <div class="form-row">
+                                <div class="form-group flex-grow">
+                                    <label>آيدي الروم</label>
+                                    <input type="text" id="auctionTicketRoom" class="form-input dark-input" placeholder="آيدي الروم">
+                                </div>
+                                <button class="gradient-btn" onclick="sendAuctionTicketEmbed()">📤 إرسال</button>
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-section">
+                            <h3>📝 تكت الطلبات</h3>
+                            <div class="form-row">
+                                <div class="form-group flex-grow">
+                                    <label>آيدي الروم</label>
+                                    <input type="text" id="orderTicketRoom" class="form-input dark-input" placeholder="آيدي الروم">
+                                </div>
+                                <button class="gradient-btn" onclick="sendOrderTicketEmbed()">📤 إرسال</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Embeds Section -->
+                    <div class="rules-grid">
+                        <section class="content-section">
+                            <h2>🔨 إمبد المزاد</h2>
+                            <div class="form-group">
+                                <label>عنوان الإمبد</label>
+                                <input type="text" id="auctionEmbedTitle" class="form-input dark-input" placeholder="شراء مزاد">
+                            </div>
+                            <div class="form-group">
+                                <label>وصف الإمبد</label>
+                                <textarea id="auctionEmbedDesc" class="form-textarea dark-input" rows="3" placeholder="اضغط على الزر بالأسفل لفتح تكت شراء مزاد"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>نص الزر</label>
+                                <input type="text" id="auctionButtonText" class="form-input dark-input" placeholder="فتح تكت مزاد">
+                            </div>
+                        </section>
+                        
+                        <section class="content-section">
+                            <h2>📝 إمبد الطلبات</h2>
+                            <div class="form-group">
+                                <label>عنوان الإمبد</label>
+                                <input type="text" id="orderEmbedTitle" class="form-input dark-input" placeholder="شراء طلب">
+                            </div>
+                            <div class="form-group">
+                                <label>وصف الإمبد</label>
+                                <textarea id="orderEmbedDesc" class="form-textarea dark-input" rows="3" placeholder="اضغط على الزر بالأسفل لفتح تكت شراء طلب"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>نص الزر</label>
+                                <input type="text" id="orderButtonText" class="form-input dark-input" placeholder="فتح تكت طلب">
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <div class="button-row">
+                        <button class="save-btn" onclick="saveShopOrganizeSettings()">💾 حفظ الإعدادات</button>
+                    </div>
+                </div>
+                
+                <!-- System Logs Page -->
+                <div id="system-logs-page" class="page-section">
+                    <h1 class="page-title">سجلات النظام</h1>
+                    
+                    <div class="button-row top-actions">
+                        <button class="secondary-btn" onclick="refreshLogs()">🔄 تحديث</button>
+                        <button class="danger-btn" onclick="clearLogs()">🗑️ مسح السجلات</button>
+                    </div>
+                    
+                    <!-- Stats Cards -->
+                    <div class="logs-stats-grid">
+                        <div class="log-stat-card">
+                            <div class="stat-icon-box blue">📊</div>
+                            <div class="stat-value" id="totalLogsCount">0</div>
+                            <div class="stat-label">إجمالي السجلات</div>
+                        </div>
+                        <div class="log-stat-card">
+                            <div class="stat-icon-box green">🔐</div>
+                            <div class="stat-value" id="loginLogsCount">0</div>
+                            <div class="stat-label">محاولات الدخول</div>
+                        </div>
+                        <div class="log-stat-card">
+                            <div class="stat-icon-box yellow">⚠️</div>
+                            <div class="stat-value" id="failedLogsCount">0</div>
+                            <div class="stat-label">دخول فاشل</div>
+                        </div>
+                        <div class="log-stat-card">
+                            <div class="stat-icon-box purple">✏️</div>
+                            <div class="stat-value" id="settingsLogsCount">0</div>
+                            <div class="stat-label">تغييرات الإعدادات</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Logs Tabs -->
+                    <div class="logs-tabs">
+                        <button class="log-tab-btn active" onclick="showLogsTab('all')">🔴 الكل</button>
+                        <button class="log-tab-btn" onclick="showLogsTab('login')">🔐 الدخول</button>
+                        <button class="log-tab-btn" onclick="showLogsTab('settings')">الإعدادات</button>
+                        <button class="log-tab-btn" onclick="showLogsTab('shops')">🏪 المتاجر</button>
+                        <button class="log-tab-btn" onclick="showLogsTab('errors')">❌ الأخطاء</button>
+                    </div>
+                    
+                    <section class="content-section">
+                        <table class="data-table" id="logsTable">
+                            <thead>
+                                <tr>
+                                    <th>التاريخ</th>
+                                    <th>النوع</th>
+                                    <th>المستخدم</th>
+                                    <th>الإجراء</th>
+                                    <th>التفاصيل</th>
+                                </tr>
+                            </thead>
+                            <tbody id="logsList">
+                                <tr><td colspan="5" class="no-data">لا توجد سجلات</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+                <!-- Embed Messages Page -->
+                <div id="embed-messages-page" class="page-section">
+                    <h1 class="page-title">💬 رسائل الإيمبد</h1>
+                    <section class="content-section">
+                        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2>الإسم</h2>
+                            <button class="gradient-btn" onclick="showCreateEmbedModal()">+ إنشاء ايمبد!</button>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="embedSearch" class="form-input" placeholder="البحث باستخدام اسم الايمبد">
+                        </div>
+                        <h3>رسائل الإيمبد</h3>
+                        <div id="embedMessagesList" class="embeds-grid">
+                            <div class="no-data-message">لا توجد رسائل إيمبد. أنشئ واحدة جديدة!</div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Embed Editor Modal -->
+                <div id="embedEditorModal" class="modal-overlay" style="display: none;">
+                    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+                        <div class="modal-header">
+                            <h2>تعديل الإيمبد</h2>
+                            <button class="close-btn" onclick="closeEmbedModal()">&times;</button>
+                        </div>
+                        <div class="form-group">
+                            <label>الإسم</label>
+                            <input type="text" id="embedName" class="form-input" placeholder="اسم الإيمبد">
+                        </div>
+                        <div class="tabs-container" style="margin-bottom: 20px;">
+                            <button class="tab-btn active" onclick="switchEmbedTab('message')">الرسالة</button>
+                            <button class="tab-btn" onclick="switchEmbedTab('embed')">ايمبد</button>
+                        </div>
+                        <div id="embed-message-tab" class="tab-content active">
+                            <div class="form-group">
+                                <label>محتوى الرسالة</label>
+                                <textarea id="embedMessageContent" class="form-textarea" rows="4" placeholder="محتوى الرسالة العادية (بدون إيمبد)"></textarea>
+                            </div>
+                        </div>
+                        <div id="embed-embed-tab" class="tab-content" style="display: none;">
+                            <div class="embed-preview-container" style="display: flex; gap: 20px;">
+                                <div class="embed-form" style="flex: 1;">
+                                    <div class="form-group">
+                                        <label>لون</label>
+                                        <div class="color-picker-row">
+                                            <span class="color-dot" style="background: #5865F2;" onclick="selectEmbedColor('#5865F2')"></span>
+                                            <span class="color-dot" style="background: #3498db;" onclick="selectEmbedColor('#3498db')"></span>
+                                            <span class="color-dot" style="background: #2ecc71;" onclick="selectEmbedColor('#2ecc71')"></span>
+                                            <span class="color-dot" style="background: #f1c40f;" onclick="selectEmbedColor('#f1c40f')"></span>
+                                            <span class="color-dot" style="background: #e67e22;" onclick="selectEmbedColor('#e67e22')"></span>
+                                            <span class="color-dot" style="background: #e74c3c;" onclick="selectEmbedColor('#e74c3c')"></span>
+                                            <input type="color" id="embedColorPicker" value="#5865F2" onchange="selectEmbedColor(this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="form-row" style="display: flex; gap: 10px;">
+                                        <div class="form-group" style="flex: 1;">
+                                            <label>الإسم (Author)</label>
+                                            <input type="text" id="embedAuthorName" class="form-input" placeholder="اسم الكاتب">
+                                        </div>
+                                        <div class="form-group" style="flex: 1;">
+                                            <label>رابط</label>
+                                            <input type="text" id="embedAuthorUrl" class="form-input" placeholder="رابط صورة الكاتب">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>عنوان</label>
+                                        <input type="text" id="embedTitle" class="form-input" placeholder="عنوان الإيمبد">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>وصف حلو</label>
+                                        <textarea id="embedDescription" class="form-textarea" rows="4" placeholder="وصف الإيمبد"></textarea>
+                                    </div>
+                                    <div id="embedFieldsContainer"></div>
+                                    <button class="gradient-btn" onclick="addEmbedField()" style="background: linear-gradient(135deg, #5865F2, #7289da);">أضف حقل</button>
+                                    <div class="form-group" style="margin-top: 15px;">
+                                        <label>صورة كبيرة</label>
+                                        <input type="text" id="embedImage" class="form-input" placeholder="رابط الصورة الكبيرة">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>صورة مصغرة</label>
+                                        <input type="text" id="embedThumbnail" class="form-input" placeholder="رابط الصورة المصغرة">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>الفوتر</label>
+                                        <input type="text" id="embedFooter" class="form-input" placeholder="نص الفوتر">
+                                    </div>
+                                </div>
+                                <div class="embed-preview" style="flex: 1; background: #2f3136; border-radius: 8px; padding: 15px; border-left: 4px solid #5865F2;">
+                                    <div id="embedPreviewContent">
+                                        <div class="preview-author" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"></div>
+                                        <div class="preview-title" style="font-weight: bold; font-size: 16px;"></div>
+                                        <div class="preview-description" style="margin-top: 8px; color: #dcddde;"></div>
+                                        <div class="preview-fields" style="margin-top: 10px;"></div>
+                                        <div class="preview-image" style="margin-top: 10px;"></div>
+                                        <div class="preview-footer" style="margin-top: 10px; font-size: 12px; color: #72767d;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 20px;">
+                            <label>إرسال إلى روم</label>
+                            <select id="embedSendChannel" class="form-select"></select>
+                        </div>
+                        <div class="modal-actions" style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button class="save-btn" onclick="saveEmbed()">💾 حفظ</button>
+                            <button class="gradient-btn" onclick="sendEmbedToChannel()">📤 إرسال</button>
+                            <button class="secondary-btn" onclick="closeEmbedModal()">إلغاء</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto Reply Page -->
+                <div id="auto-reply-page" class="page-section">
+                    <h1 class="page-title">✉️ الرد التلقائي</h1>
+                    <section class="content-section">
+                        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2>إدارة الردود التلقائية</h2>
+                            <button class="gradient-btn" onclick="showAddAutoReplyModal()">+ إضافة رد تلقائي</button>
+                        </div>
+                        <div id="autoReplyList" class="items-list">
+                            <div class="no-data-center">
+                                <div class="no-data-icon">💬</div>
+                                <p>!No responses. create the first response</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Add Auto Reply Modal -->
+                <div id="autoReplyModal" class="modal-overlay" style="display: none;">
+                    <div class="modal-content" style="max-width: 600px;">
+                        <div class="modal-header">
+                            <h2>إضافة رد تلقائي</h2>
+                            <button class="close-btn" onclick="closeAutoReplyModal()">&times;</button>
+                        </div>
+                        <div class="form-group">
+                            <label>الكلمة المفتاحية (Trigger)</label>
+                            <input type="text" id="autoReplyTrigger" class="form-input" placeholder="مثال: موي">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 10px;">
+                                <input type="checkbox" id="autoReplyExactMatch">
+                                البحث في الجملة كاملة
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 10px;">
+                                <input type="checkbox" id="autoReplyAsReply">
+                                إرسال كـ رد
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>الرد</label>
+                            <textarea id="autoReplyResponse" class="form-textarea" rows="4" placeholder="موي شويتين ويجي&#10;[user]"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>ردود عشوائية (اختياري)</label>
+                            <div id="randomRepliesContainer"></div>
+                            <button class="secondary-btn" onclick="addRandomReply()">+ إضافة رد عشوائي</button>
+                        </div>
+                        <div class="variables-section" style="background: #2a2d31; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <h4>المتغيرات:</h4>
+                            <p><code>[user]</code> الإشارة إلى الكاتب</p>
+                            <p><code>[userName]</code> يظهر اسم العضو بدون الإشارة له</p>
+                            <p><code>[invites]</code> عدد دعوات العضو <span class="badge">بريميوم</span></p>
+                        </div>
+                        <div class="form-group" style="margin-top: 15px;">
+                            <label>الرولات المفعلة</label>
+                            <select id="autoReplyEnabledRoles" class="form-select" multiple></select>
+                        </div>
+                        <div class="form-group">
+                            <label>الرولات المعطلة</label>
+                            <select id="autoReplyDisabledRoles" class="form-select" multiple></select>
+                        </div>
+                        <div class="form-group">
+                            <label>الرومات المفعلة</label>
+                            <select id="autoReplyEnabledChannels" class="form-select" multiple></select>
+                        </div>
+                        <div class="form-group">
+                            <label>الرومات المعطلة</label>
+                            <select id="autoReplyDisabledChannels" class="form-select" multiple></select>
+                        </div>
+                        <div class="modal-actions" style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button class="save-btn" onclick="saveAutoReply()">💾 حفظ</button>
+                            <button class="secondary-btn" onclick="closeAutoReplyModal()">إلغاء</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto Line Page -->
+                <div id="auto-line-page" class="page-section">
+                    <h1 class="page-title">📏 الخط التلقائي</h1>
+                    <section class="content-section">
+                        <h2>إعدادات الخط التلقائي</h2>
+                        <p class="section-desc">يتم إرسال خط فاصل تلقائياً بعد كل رسالة في الرومات المحددة</p>
+                        <div class="form-group">
+                            <label>تفعيل الخط التلقائي</label>
+                            <label class="switch">
+                                <input type="checkbox" id="autoLineEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>صورة الخط / الفاصل</label>
+                            <input type="text" id="autoLineImage" class="form-input" placeholder="رابط صورة الخط">
+                        </div>
+                        <div class="form-group">
+                            <label>نص الخط (بديل للصورة)</label>
+                            <input type="text" id="autoLineText" class="form-input" placeholder="مثال: ═══════════════════════">
+                        </div>
+                        <div class="form-group">
+                            <label>الرومات المفعلة</label>
+                            <select id="autoLineChannels" class="form-select" multiple></select>
+                        </div>
+                        <div class="form-group">
+                            <label>تأخير الإرسال (بالثواني)</label>
+                            <input type="number" id="autoLineDelay" class="form-input" value="2" min="0" max="60">
+                        </div>
+                        <button class="save-btn" onclick="saveAutoLineSettings()">💾 حفظ الإعدادات</button>
+                    </section>
+                </div>
+
+                <!-- Tax Room Page -->
+                <div id="tax-room-page" class="page-section">
+                    <h1 class="page-title">روم الضرائب</h1>
+                    <section class="content-section">
+                        <h2>إعدادات روم الضرائب</h2>
+                        <div class="form-group">
+                            <label>روم الضرائب</label>
+                            <select id="taxRoomChannel" class="form-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>تفعيل إشعارات الضرائب</label>
+                            <label class="switch">
+                                <input type="checkbox" id="taxNotificationsEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </section>
+                    <section class="content-section">
+                        <h2>إعدادات إيمبد الضرائب</h2>
+                        <div class="form-group">
+                            <label>عنوان الإيمبد</label>
+                            <input type="text" id="taxEmbedTitle" class="form-input" placeholder="إشعار ضريبة">
+                        </div>
+                        <div class="form-group">
+                            <label>وصف الإيمبد</label>
+                            <textarea id="taxEmbedDescription" class="form-textarea" rows="4" placeholder="مرحباً {user}&#10;لديك ضريبة مستحقة بقيمة {amount}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>لون الإيمبد</label>
+                            <div class="color-picker-row">
+                                <span class="color-dot" style="background: #5865F2;" onclick="document.getElementById('taxEmbedColor').value='#5865F2'"></span>
+                                <span class="color-dot" style="background: #e74c3c;" onclick="document.getElementById('taxEmbedColor').value='#e74c3c'"></span>
+                                <span class="color-dot" style="background: #f1c40f;" onclick="document.getElementById('taxEmbedColor').value='#f1c40f'"></span>
+                                <span class="color-dot" style="background: #2ecc71;" onclick="document.getElementById('taxEmbedColor').value='#2ecc71'"></span>
+                                <input type="color" id="taxEmbedColor" value="#5865F2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>صورة الإيمبد</label>
+                            <input type="text" id="taxEmbedImage" class="form-input" placeholder="رابط صورة الإيمبد">
+                        </div>
+                        <div class="form-group">
+                            <label>الفوتر</label>
+                            <input type="text" id="taxEmbedFooter" class="form-input" placeholder="نظام الضرائب">
+                        </div>
+                        <div class="variables-section" style="background: #2a2d31; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <h4>المتغيرات المتاحة:</h4>
+                            <p><code>{user}</code> منشن صاحب المتجر</p>
+                            <p><code>{amount}</code> مبلغ الضريبة</p>
+                            <p><code>{shopName}</code> اسم المتجر</p>
+                            <p><code>{dueDate}</code> تاريخ الاستحقاق</p>
+                        </div>
+                        <button class="save-btn" onclick="saveTaxRoomSettings()">💾 حفظ الإعدادات</button>
+                    </section>
+                </div>
+
+                <div id="website-tickets-page" class="page-section">
+                    <h1 class="page-title">تذاكر الموقع</h1>
+                    <section class="content-section">
+                        <h2>فتح تذكرة جديدة</h2>
+                        <div class="form-group">
+                            <label>عنوان التذكرة</label>
+                            <input type="text" id="ticketSubject" class="form-input" placeholder="موضوع التذكرة">
+                        </div>
+                        <div class="form-group">
+                            <label>وصف المشكلة</label>
+                            <textarea id="ticketDescription" class="form-textarea" rows="5" placeholder="اشرح مشكلتك بالتفصيل..."></textarea>
+                        </div>
+                        <button class="save-btn" onclick="submitWebsiteTicket()">📩 إرسال التذكرة</button>
+                    </section>
+                    <section class="content-section">
+                        <h2>تذاكري</h2>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم التذكرة</th>
+                                    <th>الموضوع</th>
+                                    <th>الحالة</th>
+                                    <th>التاريخ</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTicketsList"></tbody>
+                        </table>
+                    </section>
+                </div>
+                
+                <!-- Premium Dashboard Page -->
+                <div id="premium-dashboard-page" class="page-section">
+                    <h1 class="page-title">⭐ لوحة تحكم البريميوم</h1>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon gold">🤖</div>
+                            <div class="stat-info">
+                                <h3 id="premiumActiveBots">0</h3>
+                                <p>البوتات النشطة</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green">💰</div>
+                            <div class="stat-info">
+                                <h3 id="premiumTotalSold">0</h3>
+                                <p>إجمالي المبيعات</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon red">🚫</div>
+                            <div class="stat-info">
+                                <h3 id="premiumBlacklistCount">0</h3>
+                                <p>المحظورين</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue">👨‍💻</div>
+                            <div class="stat-info">
+                                <h3 id="premiumDevsCount">0</h3>
+                                <p>المطورين</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="content-section">
+                        <h2>إضافة بريميوم جديد</h2>
+                        <div class="form-group">
+                            <label>آيدي المستخدم</label>
+                            <input type="text" id="premiumUserId" class="form-input" placeholder="123456789012345678">
+                        </div>
+                        <div class="form-group">
+                            <label>آيدي السيرفر</label>
+                            <input type="text" id="premiumServerId" class="form-input" placeholder="123456789012345678">
+                        </div>
+                        <button class="save-btn" onclick="addPremiumBot()">➕ إضافة بريميوم</button>
+                    </section>
+                    <section class="content-section">
+                        <h2>إعدادات الأسعار</h2>
+                        <div class="form-group">
+                            <label>سعر البريميوم (كردت)</label>
+                            <input type="number" id="premiumPrice" class="form-input" placeholder="5000" value="5000">
+                        </div>
+                        <div class="form-group">
+                            <label>آيدي بنك التحويل</label>
+                            <input type="text" id="premiumTransferBank" class="form-input" placeholder="123456789012345678">
+                        </div>
+                        <button class="save-btn" onclick="savePremiumSettings()">💾 حفظ الإعدادات</button>
+                    </section>
+                    <section class="content-section">
+                        <h2>📦 النسخ الاحتياطي</h2>
+                        <p style="color: #888; margin-bottom: 15px;">سيتم إرسال نسخة احتياطية مضغوطة إلى رسائلك الخاصة على Discord</p>
+                        <div class="form-group">
+                            <label>آيدي المستخدم المستلم (اختياري)</label>
+                            <input type="text" id="backupTargetUserId" class="form-input" placeholder="اتركه فارغاً للإرسال لنفسك">
+                        </div>
+                        <button class="gradient-btn" onclick="createAndSendBackup()" id="backupBtn">
+                            📦 إنشاء نسخة احتياطية وإرسالها
+                        </button>
+                        <div id="backupStatus" style="margin-top: 10px; display: none;"></div>
+                    </section>
+                </div>
+                
+                <!-- Premium Bots Page -->
+                <div id="premium-bots-page" class="page-section">
+                    <h1 class="page-title">🤖 البوتات البريميوم</h1>
+                    
+                    <!-- Statistics -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon green">🟢</div>
+                            <div class="stat-info">
+                                <h3 id="runningBotsCount">0</h3>
+                                <p>بوتات شغالة</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue">📊</div>
+                            <div class="stat-info">
+                                <h3 id="totalBotsCount">0</h3>
+                                <p>إجمالي البوتات</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon gold">📅</div>
+                            <div class="stat-info">
+                                <h3 id="monthlyBotsCount">0</h3>
+                                <p>اشتراك شهري</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon purple">♾️</div>
+                            <div class="stat-info">
+                                <h3 id="lifetimeBotsCount">0</h3>
+                                <p>اشتراك دائم</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <section class="content-section">
+                        <h2>⚡ إجراءات سريعة</h2>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button class="gradient-btn" onclick="startAllBots()">▶️ تشغيل الكل</button>
+                            <button class="save-btn" style="background: #f44336;" onclick="stopAllBots()">⏹️ إيقاف الكل</button>
+                            <button class="save-btn" onclick="refreshPremiumBots()">🔄 تحديث القائمة</button>
+                        </div>
+                    </section>
+                    
+                    <!-- Bots Table -->
+                    <section class="content-section">
+                        <h2>📋 قائمة البوتات</h2>
+                        <table class="data-table" id="premiumBotsTable">
+                            <thead>
+                                <tr>
+                                    <th>رقم الفاتورة</th>
+                                    <th>المستخدم</th>
+                                    <th>النوع</th>
+                                    <th>الحالة</th>
+                                    <th>التشغيل</th>
+                                    <th>تاريخ الانتهاء</th>
+                                    <th>التحكم</th>
+                                </tr>
+                            </thead>
+                            <tbody id="premiumBotsList"></tbody>
+                        </table>
+                    </section>
+                    
+                    <!-- Add New Bot -->
+                    <section class="content-section">
+                        <h2>➕ إضافة بوت جديد يدوياً</h2>
+                        <div class="form-group">
+                            <label>آيدي المستخدم</label>
+                            <input type="text" id="newBotUserId" class="form-input" placeholder="123456789012345678">
+                        </div>
+                        <div class="form-group">
+                            <label>نوع الاشتراك</label>
+                            <select id="newBotSubscriptionType" class="form-select">
+                                <option value="monthly">شهري (30 يوم)</option>
+                                <option value="lifetime">دائم</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="serverIdGroup">
+                            <label>آيدي السيرفر (للاشتراك الشهري)</label>
+                            <input type="text" id="newBotServerId" class="form-input" placeholder="123456789012345678">
+                        </div>
+                        <div class="form-group" id="tokenGroup" style="display: none;">
+                            <label>توكن البوت (للاشتراك الدائم)</label>
+                            <input type="password" id="newBotToken" class="form-input" placeholder="Bot Token">
+                        </div>
+                        <button class="gradient-btn" onclick="addNewPremiumBot()">➕ إضافة البوت</button>
+                    </section>
+                </div>
+                
+                <!-- Premium Blacklist Page -->
+                <div id="premium-blacklist-page" class="page-section">
+                    <h1 class="page-title">🚫 قائمة الحظر</h1>
+                    <section class="content-section">
+                        <h2>إضافة للقائمة السوداء</h2>
+                        <div class="form-group">
+                            <label>النوع</label>
+                            <select id="blacklistType" class="form-select">
+                                <option value="user">مستخدم</option>
+                                <option value="server">سيرفر</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>الآيدي</label>
+                            <input type="text" id="blacklistId" class="form-input" placeholder="123456789012345678">
+                        </div>
+                        <button class="save-btn" onclick="addToBlacklist()">➕ إضافة للحظر</button>
+                    </section>
+                    <section class="content-section">
+                        <h2>المستخدمين المحظورين</h2>
+                        <ul id="blacklistUsersList" class="items-list"></ul>
+                    </section>
+                    <section class="content-section">
+                        <h2>السيرفرات المحظورة</h2>
+                        <ul id="blacklistServersList" class="items-list"></ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Shop Type Modal -->
+    <div id="shopTypeModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="shopTypeModalTitle">إضافة نوع متجر</h2>
+                <button class="modal-close" onclick="closeModal('shopTypeModal')">&times;</button>
+            </div>
+            <form id="shopTypeForm">
+                <input type="hidden" id="editShopTypeId">
+                <div class="form-group">
+                    <label>معرف النوع (ID)</label>
+                    <input type="text" id="shopTypeId" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>اسم النوع</label>
+                    <input type="text" id="shopTypeName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>البريفكس</label>
+                    <input type="text" id="shopTypePrefix" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>رتبة المتجر</label>
+                    <select id="shopTypeRole" class="form-select role-select"></select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>نسبة Everyone (%)</label>
+                        <input type="number" id="shopTypeEvery" class="form-input" value="20">
+                    </div>
+                    <div class="form-group">
+                        <label>نسبة Here (%)</label>
+                        <input type="number" id="shopTypeHere" class="form-input" value="15">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>نسبة Shop (%)</label>
+                        <input type="number" id="shopTypeShop" class="form-input" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label>الضريبة</label>
+                        <input type="number" id="shopTypeTax" class="form-input" value="25000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>السعر</label>
+                    <input type="number" id="shopTypePrice" class="form-input" value="2">
+                </div>
+                <button type="submit" class="save-btn">حفظ</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Custom Role Modal -->
+    <div id="roleModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="roleModalTitle">إضافة رتبة مخصصة</h2>
+                <button class="modal-close" onclick="closeModal('roleModal')">&times;</button>
+            </div>
+            <form id="roleForm">
+                <input type="hidden" id="editRoleId">
+                <div class="form-group">
+                    <label>معرف الرتبة (ID)</label>
+                    <input type="text" id="customRoleId" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>اسم الرتبة</label>
+                    <input type="text" id="customRoleName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>رتبة Discord</label>
+                    <select id="customRoleDiscordId" class="form-select role-select"></select>
+                </div>
+                <div class="form-group">
+                    <label>السعر</label>
+                    <input type="number" id="customRolePrice" class="form-input" value="0">
+                </div>
+                <div class="form-group">
+                    <label>المميزات</label>
+                    <textarea id="customRoleBenefits" class="form-textarea" rows="3"></textarea>
+                </div>
+                <button type="submit" class="save-btn">حفظ</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="save-notification" class="save-notification"></div>
+    
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
