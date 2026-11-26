@@ -1,0 +1,13 @@
+{
+  "premiumBots": [],
+  "settings": {
+    "premiumPrice": 5000,
+    "transferBank": null
+  },
+  "invoices": [],
+  "stats": {
+    "totalSold": 3,
+    "totalRevenue": 5000,
+    "activeBots": 3
+  }
+}

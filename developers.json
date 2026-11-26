@@ -1,0 +1,39 @@
+{
+  "developers": [
+    "959174041422397471","1342092696805703722"
+  ],
+  "blacklist": {
+    "users": [],
+    "servers": []
+  },
+  "premiumBots": [
+    {
+      "id": "PREM-1768900917940",
+      "userId": "959174041422397471",
+      "botToken": "1299339997278769223",
+      "serverId": "FREE-DEV",
+      "createdAt": "2026-01-20T09:21:57.940Z",
+      "expiryDate": 30,
+      "status": "expired"
+    },
+    {
+      "invoiceCode": "PREM-1768903119564",
+      "userId": "959174041422397471",
+      "serverId": "1299339997278769223",
+      "token": "c7302e2e3cd48f8060a62f80e4bf0862:5a00e1ccdce0664e0e5427d4d5887050d64b2ed1e6e549bcfa6ae0a6ec7539672c3e1fe4357c179a3213967e66597cd8fb6b77332ff0ce11a18ffa87abb446c7928b45413922c70776c2b66ca626eb5f",
+      "prefix": "-",
+      "subscriptionType": "lifetime",
+      "purchaseDate": "2026-01-20T09:58:39.565Z",
+      "expiryDate": "2027-02-19T09:58:39.564Z",
+      "paymentMethod": "FREE-DEV",
+      "isActive": true,
+      "lastRenewal": "2026-01-20T10:04:40.538Z",
+      "renewedBy": "959174041422397471"
+    }
+  ],
+  "stats": {
+    "totalPremiumSold": 1,
+    "totalRevenue": 0,
+    "activeBots": 0
+  }
+}
